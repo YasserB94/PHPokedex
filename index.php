@@ -42,7 +42,9 @@
             $baseForm = $pokemonEvoChain->chain->species->name;
             array_push($evolutions, $baseForm);
             $amountOfEvolutions = count($pokemonEvoChain->chain->evolves_to);
-            echo $amountOfEvolutions;
+            if ($amountOfEvolutions > 0) {
+                echo 'This Pokemon has ' . $amountOfEvolutions . ' Evolutions';
+            }
         } else {
             $patternToCheckForNumbers = "/^\d+$/";
             if (preg_match($patternToCheckForNumbers, $userInput)) {
